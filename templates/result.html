@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Recommendation</title>
+</head>
+<body style="background-image: url('https://www.fraghero.com/wp-content/uploads/2016/04/pokemon-firered-1.jpg');">
+    
+    <h2 style="background-color: antiquewhite; font-family: Arial, Helvetica, sans-serif;">Pokemon Favorit Anda</h2>
+    <div style="background-color: hsl(0,100%,90%); padding: 10px;" >
+        
+        
+        <br>
+       
+        <img src='{{ data['Gambar'] }}' alt="">
+        <br>
+        <p>{{ data['Name'] }}  | {{ data['Type 1'] }} | {{ data['Generation'] }} | {{ data['Legendary'] }} </p>
+    </div>
+
+
+    <h2 style="">Pokemon Recommendation</h2>
+    {% for pokemon in df%}
+    <div style="background-color: beige;">
+        <img src={{ pokemon['Gambar'] }} alt="">
+        <br>
+        <p>{{ pokemon['Name'] }} | {{ pokemon['Type 1'] }} | {{ pokemon['Generation'] }} | {{ pokemon['Legendary'] }} </p>
+    </div>
+    {% endfor %}
+    <center>
+        <form action="http://localhost:5000/">
+            <input type="submit" value="Kembali"></input>
+        </form>
+    </center>
+</body>
+</html>
